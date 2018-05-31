@@ -8,7 +8,7 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm install stable
 nvm use stable
-npn install -g pm2
+npm install -g pm2
 EOF
 
 chown ubuntu:ubuntu /tmp/startup.sh
