@@ -1,2 +1,16 @@
 #!/bin/bash
+cat > /tmp/startup.sh << EOF
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+nvm install stable
+nvm use stable
+npn install -g pm2
+EOF
+
+chown ubuntu:ubuntu /tmp/startup.sh
+chmod a+x /tmp/startup.sh
+sleep 1; su - ubuntu -c "/tmp/startup.sh"
