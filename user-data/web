@@ -13,4 +13,4 @@ EOF
 
 chown ubuntu:ubuntu /tmp/startup.sh
 chmod a+x /tmp/startup.sh
-sleep 1; su - ubuntu -c "/tmp/startup.sh"
+sleep 1; su - ubuntu -c "/tmp/startup.sh > /tmp/startup.log"
