@@ -1,2 +1,3 @@
 #!/bin/bash
 mkdir /home/ubuntu/solr
+chown 8983:8983 /home/ubuntu/solr
